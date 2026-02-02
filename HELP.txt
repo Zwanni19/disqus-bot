@@ -1,0 +1,75 @@
+#############################################
+################# Variablen #################
+#############################################
+[Environment]::SetEnvironmentVariable("DISQUS_FORUM", "31gg-1", "User")
+[Environment]::SetEnvironmentVariable("DISQUS_PUBLIC_KEY", "EjO53RoT6qvq00HjF1Z86rsw7UshZwLya7atR5C53kZDQPj3ndjp8daIN8S4TBtX", "User")
+[Environment]::SetEnvironmentVariable("DISQUS_SECRET_KEY","Sr8rIcLbUtRZUDrZnj0EQanbDdTles3slYfnEhZ4kOJGlV1KjdIDIM36uQ4Wx1h7","User")
+[Environment]::SetEnvironmentVariable("DISQUS_ACCESS_TOKEN", "743f7562ae01454aab9b9270f2e525b0", "User")
+[Environment]::SetEnvironmentVariable("POLL_SECONDS", "4", "User")
+[Environment]::SetEnvironmentVariable("THREAD_REFRESH_SECONDS", "60", "User")
+[Environment]::SetEnvironmentVariable("THREAD_ORDER", "created", "User")
+[Environment]::SetEnvironmentVariable("GEMINI_API_KEY", "AIzaSyDduHp_7kX7Wvph9I3nn0ULi5pUYFnq92E", "User")
+[Environment]::SetEnvironmentVariable("GROQ_API_KEY", "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", "User")
+[Environment]::SetEnvironmentVariable("GROQ_MODEL", "llama-3.3-70b-versatile", "User")
+[Environment]::SetEnvironmentVariable("MOD_USERNAMES", "31GGAdmin,stabilerbegruesser,wilmagernhartreinlunzen,Tatverdachtoriginal,75d,kvn888", "User")
+#############################################
+[Environment]::SetEnvironmentVariable("BOT_DB_PATH_TEST", "disqus_state_dev.db", "User")
+[Environment]::SetEnvironmentVariable("DISQUS_PUBLIC_KEY_TEST", "nqD3Y4zWSQe2etxRvYbvnOhxs37DsS4rvrxo8O2dkZYyxcxcUZccWBUqUx5pIZbK", "User")
+[Environment]::SetEnvironmentVariable("DISQUS_SECRET_KEY_TEST","4E1uRi1i8ldGECTOGmdMWx5DDf0EHMnkqFx6QM0gmEAtbUyOXhY6CFiWg0oaco0x","User")
+[Environment]::SetEnvironmentVariable("DISQUS_ACCESS_TOKEN_TEST", "7983b18778914525aef48f9828c9a6ce", "User")
+
+
+#############################################
+################ Bot starten ################
+#############################################
+Speichere folgendes Skript als:
+C:\Users\User\comment-bot-stabiler\control.ps1
+
+powershell -ExecutionPolicy Bypass -File .\control.ps1 -Action Startup
+powershell -ExecutionPolicy Bypass -File .\control.ps1 -Action Shutdown
+powershell -ExecutionPolicy Bypass -File .\control.ps1 -Action Restart
+
+#############################################
+
+Mock-API starten (Terminal 1)
+cd comment-bot-test
+uvicorn mock_api:app --reload --port 8000
+
+oder
+
+.\.venv\Scripts\python.exe -m uvicorn mock_api:app --reload --port 8000
+
+Bot starten (Terminal 2, gleicher Ordner)
+cd comment-bot-test
+
+.\.venv\Scripts\Activate.ps1
+python .\bot.py
+
+oder
+
+.\.venv\Scripts\python.exe .\disqus_latest_bot.py
+
+#############################################
+################ Bot starten ################
+#############################################
+AUS
+$env:DEBUG_TRIGGERS="0"
+AN
+$env:DEBUG_TRIGGERS="1"
+
+
+#############################################
+################## scratch ##################
+#############################################
+
+front geht nicht mehr, liebestest geht nicht mehr, prüfe bitte was noch alles nicht geht.
+
+
+
+{"code":0,"response":{"aetBannerConfirmation":null,"founder":"169007893","twitterName":"31gg_de","commentsLinkOne":"1 Comment","guidelines":null,"disableDisqusBrandingOnPolls":false,"commentsLinkZero":"0 Comments","disableDisqusBranding":false,
+"id":"31gg-1","createdAt":"2021-01-07T00:48:47.876326","category":"Entertainment","aetBannerEnabled":false,"aetBannerTitle":null,"raw_guidelines":null,"initialCommentCount":null,"votingType":0,"daysUnapproveNewUsers":null,"installCompleted":true,"moderatorBadgeText":"\ud83d\uddf8","commentPolicyText":null,"aetEnabled":false,"channel":null,"sort":4,"description":null,"organizationHasBadges":true,"newPolicy":true,"raw_description":null,"customFont":null,"language":"de","adsReviewStatus":1,"commentsPlaceholderTextEmpty":null,"daysAlive":0,"forumCategory":{"date_added":"2016-01-28T01:54:31","id":4,"name":"Entertainment"},"linkColor":null,"colorScheme":"auto","pk":"6552637","commentsPlaceholderTextPopulated":null,"permissions":{},"commentPolicyLink":null,"aetBannerDescription":null,"favicon":{"permalink":"https://disqus.com/api/forums/favicons/31gg-1.jpg","cache":"//a.disquscdn.com/1768293611/images/favicon-default.png"},"name":"31gg","commentsLinkMultiple":"{num} Comments","settings":{"threadRatingsEnabled":false,"adsDRNativeEnabled":false,"behindClickEnabled":false,"disable3rdPartyTrackers":true,"adsVideoEnabled":false,"adsProductVideoEnabled":false,"adsPositionBottomEnabled":true,"ssoRequired":false,"contextualAiPollsEnabled":false,"unapproveLinks":false,"adsPositionRecommendationsEnabled":true,"adsEnabled":true,"adsProductLinksThumbnailsEnabled":true,"hasCustomAvatar":true,"organicDiscoveryEnabled":true,"adsProductDisplayEnabled":false,"adsProductLinksEnabled":true,"audienceSyncEnabled":false,"threadReactionsEnabled":false,"linkAffiliationEnabled":false,"adsPositionAiPollsEnabled":false,"disableSocialShare":false,"adsPositionTopEnabled":true,"adsProductStoriesEnabled":false,"sidebarEnabled":false,"adultContent":false,"allowAnonVotes":false,"gifPickerEnabled":false,"mustVerify":true,"badgesEnabled":false,"mustVerifyEmail":true,"allowAnonPost":false,"unapproveNewUsersEnabled":false,"mediaembedEnabled":true,"aiPollsEnabled":false,"userIdentityDisabled":false,"adsPositionPollEnabled":false,"discoveryLocked":false,"validateAllPosts":false,"adsSettingsLocked":false,"isVIP":false,"adsPositionInthreadEnabled":false},"organizationId":4079390,"typeface":"auto","url":"https://31gg.de","daysThreadAlive":0,"avatar":{"small":{"permalink":"https://disqus.com/api/forums/avatars/31gg-1.jpg?size=32","cache":"https://c.disquscdn.com/uploads/forums/655/2637/avatar32.jpg?1619024364"},"large":{"permalink":"https://disqus.com/api/forums/avatars/31gg-1.jpg?size=92","cache":"https://c.disquscdn.com/uploads/forums/655/2637/avatar92.jpg?1619024364"}},"signedUrl":"https://disq.us/?url=https%3A%2F%2F31gg.de&key=zdIcLEzmkysrp4Jzvd8SFw"}}
+
+$forumId="31gg-1"
+curl.exe -s "https://disqus.com/api/3.0/forums/listThreads.json?api_key=$($env:DISQUS_PUBLIC_KEY)&forum=$forumId&limit=1&order=desc"
+
+{"cursor":{"prev":null,"hasNext":true,"next":"1768518413602031:0:0","hasPrev":false,"total":null,"id":"1768518413602031:0:0","more":true},"code":0,"response":[{"feed":"https://31gg-1.disqus.com/release_friday_23012026/latest.rss","clean_title":"Release Friday (23.01.2026) !!!","dislikes":0,"likes":5,"message":"","ratingsEnabled":false,"isSpam":false,"isDeleted":false,"category":"8783919","adsDisabled":false,"author":"169007893","userScore":0,"id":"10890989996","signedLink":"https://disq.us/?url=https%3A%2F%2F31gg.de%2Frelease-friday-23-01-2026%2F&key=7ncwMHkP8gbTnMhMPqOlNA","createdAt":"2026-01-22T23:48:44","hasStreaming":false,"raw_message":"","isClosed":false,"link":"https://31gg.de/release-friday-23-01-2026/","slug":"release_friday_23012026","forum":"31gg-1","identifiers":["4602 https://31gg.de/?p=4602"],"posts":2450,"userSubscription":false,"validateAllPosts":false,"title":"Release Friday (23.01.2026) !!!","highlightedPost":null}]}
